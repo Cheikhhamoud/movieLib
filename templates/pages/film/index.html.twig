@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Homepage{% endblock %}
+
+{% block body %}
+<div class="container">
+  <h2 class=" mt-2">Mes Films</h2>
+  <table class="table table-hover">
+  <thead>
+					<tr>
+						<th scope="col">ID</th>
+						<th scope="col">TITRE</th>
+						<th scope="col">REALISATEURS</th>
+						<th scope="col">ACTEURS</th>
+            <th scope="col">POSTER</th>
+            <th scope="col"> GENRE </th>
+            <th scope="col">DATE DE CREATION </th>
+				
+					</tr>
+				</thead>
+
+    <tbody>
+				{% for film in films %}
+						<tr class="table-dark">
+							<th scope="row">{{ film.id }}</th>
+							<td>{{film.titre}}</td>
+							<td>{{film.realisateur }}
+								</td>
+                <td>{{film.acteurs }}
+								</td>
+                <td>{{film.poster }}
+								</td>
+                <td>{{film.genre }}
+								</td>
+							<td>{{ film.ExitAt|date('d/m/Y') }}</td>
+					
+						</tr>
+					{% endfor %}
+				</tbody>
+      </table>
+
+
+
+
+
+</div>
+{% endblock %}
